@@ -1,0 +1,273 @@
+<!-- 
+<h2>Working</h2>
+{% for field in bh3 %}
+<p>BH3</p>
+	<p>{{field.RollNo}}</p>
+	<p>{{ field.name }}</p>
+	<p>{{ field.status }}</p>
+{% endfor %} -->
+
+
+<html>
+<head>
+	<title>{% block title %}Hostel manager{% endblock %}</title>
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
+	<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static '/tables.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static '/custom.css' %}" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<style>
+	.navli .nava {
+		color: white !important;
+	}
+	.navli:hover .nava:hover {
+		color: #707677 !important;
+	}
+</style>
+
+        
+</head>
+
+
+<body>
+
+
+<nav class="navbar navbar-inverse"  style ="background-color: #55acee;font-family:monospace;border-color: #55acee">
+    <div class="container-fluid">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+			 <span class="icon-bar"></span>
+			 <span class="icon-bar"></span>
+			 <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#" style="color:white">Portal</a>
+	</div>
+	<div class="collapse navbar-collapse" id="topNavBar">
+	<ul class="nav navbar-nav navbar-left">
+		<li class="navli">
+			<a href="{% url 'index' %}" class="nava">	
+				Register
+			</a>
+		</li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li class="navli">
+			<a href="#" class="nava">	
+				BH1
+			</a>
+		</li>
+		<li class="navli">
+			<a href="#" class="nava">	
+				BH2
+			</a>
+		</li>
+		<li class="navli">
+			<a href="#" class="nava">	
+				BH3
+			</a>
+		</li>
+		<li class="navli">
+			<a href="#" class="nava">	
+				BH4
+			</a>
+		</li>	
+		<li class="navli">
+			<a href="#" class="nava">	
+				GH1
+			</a>
+		</li>
+		<li class="navli">
+			<a href="#" class="nava">	
+				GH2
+			</a>
+		</li>
+
+	</ul>
+	
+
+</nav>
+
+<h3 style ="text-align: center;color: #55acee;font-family:monospace;">List of entries</h3><!--Form-->
+{% if object_list or bh1 or bh2 or bh3 or bh4 or gh1 or gh2 %}
+{% if object_list %}
+		{% if bh1 %}
+				
+		        <h2 style="text-align:center;font-family:monospace;color:#4D7F89">BH - 1</h2>   
+				<table class="table-fill">
+		    	<thead >
+		    		<tr>
+		    			<th class="text-center">RollNo.</th>
+		    			<th class="text-center">Name</th>
+		    			<th class="text-center">Status</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody class="table-hover">
+		    		{% for student in bh1 %}
+		    		<tr>
+		    			<td class="text-center">{{student.RollNo}}</td>
+		    			<td class="text-center"> {{student.name}}</td>
+		    			<td class="text-center"> {{ student.status }}</td>
+		    		</tr>
+
+		    		{% endfor %}
+		    	</tbody>
+		    	</table>
+
+		{% else %}
+				<h2 style="text-align:center;font-family:monospace;color:#4D7F89">BH - 1</h2> 
+		        <p style="text-align:center;font-family:monospace;color: #55acee">(No registered entries from BH1)</p>
+		{% endif %}
+		
+
+		{% if bh2 %}
+				
+		        <h2 style="text-align:center;font-family:monospace;color:#4D7F89">BH - 2</h2>  
+				<table class="table-fill">
+		    	<thead >
+		    		<tr>
+		    			<th class="text-center">RollNo.</th>
+		    			<th class="text-center">Name</th>
+		    			<th class="text-center">Status</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody class="table-hover">
+		    		{% for student in bh2 %}
+		    		<tr>
+		    			<td class="text-center">{{student.RollNo}}</td>
+		    			<td class="text-center"> {{student.name}}</td>
+		    			<td class="text-center"> {{ student.status }}</td>
+		    		</tr>
+
+		    		{% endfor %}
+		    	</tbody>
+		    	</table>
+		{% else %}
+				<h2 style="text-align:center;font-family:monospace;color:#4D7F89">BH - 2</h2> 
+		        <p style="text-align:center;font-family:monospace;color: #55acee">(No registered entries from BH2)</p>
+		{% endif %}
+
+		{% if bh3 %}
+				
+		        <h2 style="text-align:center;font-family:monospace;color:#4D7F89">BH - 3</h2>   
+				<table class="table-fill">
+		    	<thead >
+		    		<tr>
+		    			<th class="text-center">RollNo.</th>
+		    			<th class="text-center">Name</th>
+		    			<th class="text-center">Status</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody class="table-hover">
+		    		{% for student in bh3 %}
+		    		<tr>
+		    			<td class="text-center">{{student.RollNo}}</td>
+		    			<td class="text-center"> {{student.name}}</td>
+		    			<td class="text-center"> {{ student.status }}</td>
+		    		</tr>
+
+		    		{% endfor %}
+		    	</tbody>
+		    </table>
+		    	
+		{% else %}
+				<h2 style="text-align:center;font-family:monospace;color:#4D7F89">BH - 3</h2> 
+		        <p style="text-align:center;font-family:monospace;color: #55acee">(No registered entries from BH3)</p>
+		{% endif %}
+
+		{% if bh4 %}
+				
+		        <h2 style="text-align:center;font-family:monospace;color:#4D7F89">BH - 4</h2>  
+				<table class="table-fill">
+		    	<thead >
+		    		<tr>
+		    			<th class="text-center">RollNo.</th>
+		    			<th class="text-center">Name</th>
+		    			<th class="text-center">Status</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody class="table-hover">
+		    		{% for student in bh4 %}
+		    		<tr>
+		    			<td class="text-center">{{student.RollNo}}</td>
+		    			<td class="text-center"> {{student.name}}</td>
+		    			<td class="text-center"> {{ student.status }}</td>
+		    		</tr>
+
+		    		{% endfor %}
+		    	</tbody>
+		    	</table>
+		    	
+		{% else %}
+				<h2 style="text-align:center;font-family:monospace;color:#4D7F89">BH - 4</h2> 
+		        <p style="text-align:center;font-family:monospace;color: #55acee">(No registered entries from BH4)</p>
+		{% endif %}
+
+		{% if gh1 %}
+				
+		        <h2 style="text-align:center;font-family:monospace;color:#4D7F89">GH - 1</h2>  
+				<table class="table-fill">
+		    	<thead >
+		    		<tr>
+		    			<th class="text-center">RollNo.</th>
+		    			<th class="text-center">Name</th>
+		    			<th class="text-center">Status</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody class="table-hover">
+		    		{% for student in gh1 %}
+		    		<tr>
+		    			<td class="text-center">{{student.RollNo}}</td>
+		    			<td class="text-center"> {{student.name}}</td>
+		    			<td class="text-center"> {{ student.status }}</td>
+		    		</tr>
+
+		    		{% endfor %}
+		    	</tbody>
+		    	</table>
+		{% else %}
+				<h2 style="text-align:center;font-family:monospace;color:#4D7F89">GH - 1</h2> 
+		        <p style="text-align:center;font-family:monospace;color: #55acee">(No registered entries from GH1)</p>
+		{% endif %}
+
+		{% if gh2 %}
+				
+		        <h2 style="text-align:center;font-family:monospace;color:#4D7F89">GH - 2</h2>  
+				<table class="table-fill">
+		    	<thead >
+		    		<tr>
+		    			<th class="text-center">RollNo.</th>
+		    			<th class="text-center">Name</th>
+		    			<th class="text-center">Status</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody class="table-hover">
+		    		{% for student in gh2 %}
+		    		<tr>
+		    			<td class="text-center">{{student.RollNo}}</td>
+		    			<td class="text-center"> {{student.name}}</td>
+		    			<td class="text-center"> {{ student.status }}</td>
+		    		</tr>
+
+		    		{% endfor %}
+		    	</tbody>
+		    	</table> 
+		{% else %}
+				<h2 style="text-align:center;font-family:monospace;color:#4D7F89">GH - 2</h2> 
+		        <p style="text-align:center;font-family:monospace;color: #55acee">(No registered entries from GH2)</p>
+
+		{% endif %}
+<br><br>
+{% endif %}
+{% endif %}
+
+</body>
+</html>
+
+</body> -->
+
