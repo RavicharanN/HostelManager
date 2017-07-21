@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 # Register your models here.
-from models import Student,Hostels,Status
+from finder.models import Student,Hostels,Status
 
 class StudentAdmin(admin.ModelAdmin) :
 	list_display = ["__unicode__"]
