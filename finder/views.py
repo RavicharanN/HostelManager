@@ -14,7 +14,7 @@ def index(request) :
 		if(form.is_valid()):
 			form.save()
 			message = 'Successfully Registered'
-			return render(request,'index.html',{'form': form,'message': message})
+			return render(request,'details.html',{'message': message})
 
 		else :
 			form_error = "(Registration Failed. Have you filled all the details?)"
